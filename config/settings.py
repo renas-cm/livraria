@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'livraria', # Adicionando a aplicação criada
+    'backendLivraria', # Adicionando a aplicação criada
 ]
 
 MIDDLEWARE = [
