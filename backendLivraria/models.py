@@ -8,6 +8,10 @@ class Categoria(models.Model):
 
     def __str__(self):
         return self.descricao
+    
+    class Meta:
+        verbose_name = 'Categoria'
+        verbose_name_plural = 'Categorias'
 
 
 class Editora(models.Model):
@@ -16,6 +20,10 @@ class Editora(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    class Meta:
+        verbose_name = 'Editora'
+        verbose_name_plural = 'Editoras'
     
 class Autor(models.Model):
     nome = models.CharField(max_length=255)
@@ -37,3 +45,7 @@ class Livro(models.Model):
     
     def __str__(self):
         return f"{self.titulo} ({self.quantidade})"       
+    
+    class Meta:
+        verbose_name = 'Livro'
+        verbose_name_plural = 'Livros'

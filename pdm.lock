@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:7553a1d13154fbf8da6d1ce2bc8f2d761cde591adf57db065e1bde98d63fcdc8"
+content_hash = "sha256:9e7eb26c3130c72fd0e0b31672f1fc3cb809c213ef832278be7c53b70fd602c8"
 
 [[metadata.targets]]
 requires_python = ">=3.9"
@@ -39,6 +39,30 @@ dependencies = [
 files = [
     {file = "Django-4.2.20-py3-none-any.whl", hash = "sha256:213381b6e4405f5c8703fffc29cd719efdf189dec60c67c04f76272b3dc845b9"},
     {file = "Django-4.2.20.tar.gz", hash = "sha256:92bac5b4432a64532abb73b2ac27203f485e40225d2640a7fbef2b62b876e789"},
+]
+
+[[package]]
+name = "django-restframework"
+version = "0.0.1"
+summary = "django-restframework "
+groups = ["default"]
+files = [
+    {file = "django-restframework-0.0.1.tar.gz", hash = "sha256:2bec9265463693ada558ad9a58c31f6f3de005a932fbfeaadf983c5c9f3b7058"},
+]
+
+[[package]]
+name = "djangorestframework"
+version = "3.15.2"
+requires_python = ">=3.8"
+summary = "Web APIs for Django, made easy."
+groups = ["default"]
+dependencies = [
+    "backports-zoneinfo; python_version < \"3.9\"",
+    "django>=4.2",
+]
+files = [
+    {file = "djangorestframework-3.15.2-py3-none-any.whl", hash = "sha256:2b8871b062ba1aefc2de01f773875441a961fefbf79f5eed1e32b2f096944b20"},
+    {file = "djangorestframework-3.15.2.tar.gz", hash = "sha256:36fe88cd2d6c6bec23dca9804bab2ba5517a8bb9d8f47ebc68981b56840107ad"},
 ]
 
 [[package]]
