@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     "corsheaders",  # Adicionando o corsheaders
     "rest_framework",  # Adicionando o restframework
     "rest_framework_simplejwt",  # Adicionando o restframework_simplejwt
+    "uploader",
     "backendLivraria",  # Adicionando a aplicação criada
+    "usuario",  
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,13 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
+
+AUTH_USER_MODEL = "usuario.Usuario" 
+
+MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_ENDPOINT = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+FILE_UPLOAD_PERMISSIONS = 0o640
 
 ROOT_URLCONF = "config.urls"
 
