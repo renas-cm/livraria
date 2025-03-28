@@ -1,25 +1,5 @@
-# Description: Serializers for the models of the application.
-# That will transform the data(obj) into JSON format.
-
 from rest_framework.serializers import ModelSerializer
-
-from .models import Categoria, Editora, Autor, Livro
-
-class CategoriaSerializer(ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = '__all__'
-        
-class EditoraSerializer(ModelSerializer):
-    class Meta:
-        model = Editora
-        fields = '__all__'
-
-class AutorSerializer(ModelSerializer):
-    class Meta:
-        model = Autor
-        fields = '__all__'
-
+from backendLivraria.models.init import Livro
 
 class LivroSerializer(ModelSerializer):
     class Meta:
@@ -43,5 +23,3 @@ class LivroListSerializer(ModelSerializer):
                 return LivroListSerializer
             elif self.action == 'retrieve':
                 return LivroDetailSerializer
-            return LivroSerializer
-

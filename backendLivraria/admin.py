@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Categoria, Editora, Autor, Livro
+from backendLivraria.models.init import Categoria, Editora, Autor, Livro
 
 admin.site.register(Categoria)
 admin.site.register(Editora)
