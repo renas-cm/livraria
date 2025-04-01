@@ -37,12 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",  # Adicionando o corsheaders
-    "rest_framework",  # Adicionando o restframework
-    "rest_framework_simplejwt",  # Adicionando o restframework_simplejwt
-    "uploader",
+    "corsheaders",  # faz a liberação de acesso a API
+    "rest_framework",  # faz o rest da API
+    "rest_framework_simplejwt",  # faz a autenticação
+    "uploader", # faz o upload de arquivos
     "backendLivraria",  # Adicionando a aplicação criada
-    "usuario",  
+    "usuario",  #faz o cadastro de usuários
+    "drf_spectacular" # faz a documentação da API
 ]
 
 MIDDLEWARE = [
@@ -57,23 +58,44 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
 ]
 
+# Configuração do CORS
+
 CORS_ALLOW_ALL_ORIGINS = True
 
+# Configuração do Rest Framework
+
 REST_FRAMEWORK = {
-    
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissions",
+    ],
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
+# user model
+
 AUTH_USER_MODEL = "usuario.Usuario" 
+
+# media settings
 
 MEDIA_URL = "http://localhost:8000/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
 
+# root url
+
 ROOT_URLCONF = "config.urls"
+
+# Spectacular settings
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Livraria API",
+    "DESCRIPTION": "API para gerenciamento de livraria, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
+}
 
 TEMPLATES = [
     {
